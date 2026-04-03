@@ -4,6 +4,7 @@ require_relative "slowpoke/version"
 require_relative "slowpoke/configuration"
 require_relative "slowpoke/tracker"
 require_relative "slowpoke/reporter"
+require_relative "slowpoke/history"
 
 module Slowpoke
   class << self
