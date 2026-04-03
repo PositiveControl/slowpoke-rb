@@ -3,12 +3,12 @@
 require_relative "lib/slowpoke/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "slowpoke"
+  spec.name = "slowpoke-rb"
   spec.version = Slowpoke::VERSION
   spec.authors = ["Mark Evans"]
   spec.summary = "Find your slow tests. Fast."
   spec.description = "A stupid-lightweight gem that identifies slow tests across Minitest, RSpec, and more."
-  spec.homepage = "https://github.com/mevans/slowpoke"
+  spec.homepage = "https://github.com/PositiveControl/slowpoke"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0"
 
