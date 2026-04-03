@@ -27,5 +27,18 @@ end
 Minitest::Test.prepend(Slowpoke::Integrations::MinitestPlugin)
 
 Minitest.after_run do
-  Slowpoke::Reporter.new(Slowpoke.tracker, Slowpoke.configuration).report
+  tracker = Slowpoke.tracker
+  config = Slowpoke.configuration
+
+  Slowpoke::Reporter.new(tracker, config).report
+
+  if config.history_path && tracker.any_slow?
+    Slowpoke::History.new(config.history_path).write(tracker)
+  end
+
+  if config.ci && tracker.any_slow?
+    count = tracker.results.size
+    $stderr.puts "Slowpoke: #{count} slow test#{"s" unless count == 1} found, failing build."
+    exit 1
+  end
 end
