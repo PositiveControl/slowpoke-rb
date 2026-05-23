@@ -1,4 +1,4 @@
-# Slowpoke
+# Slowpoke-rb
 
 Find your slow tests. Fast.
 
@@ -16,7 +16,7 @@ You don't need a profiler to know *which* tests are slow. You need a one-liner t
 
 ```ruby
 # Gemfile
-gem "slowpoke", group: :test
+gem "slowpoke-rb", group: :test
 ```
 
 ## Setup
@@ -25,10 +25,10 @@ gem "slowpoke", group: :test
 
 ```ruby
 # test/test_helper.rb
-require "slowpoke/integrations/minitest"
+require "slowpoke_rb/integrations/minitest"
 
 # Optional configuration
-Slowpoke.configure do |config|
+SlowpokeRb.configure do |config|
   config.threshold = 0.5  # seconds (default: 0.5)
   config.color = true      # ANSI colors (default: true)
   config.sort = :slowest_first
@@ -39,9 +39,9 @@ end
 
 ```ruby
 # spec/spec_helper.rb
-require "slowpoke/integrations/rspec"
+require "slowpoke_rb/integrations/rspec"
 
-Slowpoke.configure do |config|
+SlowpokeRb.configure do |config|
   config.threshold = 1.0  # be generous, or don't
 end
 ```
