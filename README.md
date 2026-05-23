@@ -4,6 +4,19 @@ Find your slow tests. Fast.
 
 A stupid-lightweight Ruby gem that identifies slow tests. Zero dependencies. Works with Minitest, RSpec, and anything that runs in Ruby.
 
+## Output
+
+```
+🐌 Slowpoke found 3 slow tests (>500ms):
+
+  1203.4ms  UserTest#test_sends_welcome_email
+            test/models/user_test.rb:42
+  872.1ms   OrderTest#test_calculates_tax_for_international
+            test/models/order_test.rb:18
+  511.3ms   AuthTest#test_locks_after_failed_attempts
+            test/integration/auth_test.rb:7
+```
+
 ## Why
 
 You don't need a profiler to know *which* tests are slow. You need a one-liner that tells you at the end of every run. That's Slowpoke.
@@ -44,19 +57,6 @@ require "slowpoke_rb/integrations/rspec"
 SlowpokeRb.configure do |config|
   config.threshold = 1.0  # be generous, or don't
 end
-```
-
-## Output
-
-```
-🐌 Slowpoke found 3 slow tests (>500ms):
-
-  1203.4ms  UserTest#test_sends_welcome_email
-            test/models/user_test.rb:42
-  872.1ms   OrderTest#test_calculates_tax_for_international
-            test/models/order_test.rb:18
-  511.3ms   AuthTest#test_locks_after_failed_attempts
-            test/integration/auth_test.rb:7
 ```
 
 Tests over 2x the threshold show in red. Everything else in yellow.
