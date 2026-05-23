@@ -10,7 +10,7 @@ You don't need a profiler to know *which* tests are slow. You need a one-liner t
 
 **What it does today (v0.1):** flags tests slower than a threshold (default: 500ms) and prints a sorted report.
 
-**What's coming (v0.2):** profiles *why* your tests are slow and suggests fixes with references, pros, and cons.
+**What's coming (v0.2):** ~~profiles~~ suggets *why* your tests are slow ~~and suggests fixes with references, pros, and cons~~.
 
 ## Install
 
@@ -88,7 +88,7 @@ Slowpoke will analyze *why* tests are slow and suggest actionable fixes:
 - **File I/O** — temp files, large fixtures, disk-bound operations
 - **Setup bloat** — expensive `before(:each)` that should be `before(:all)`
 
-Each suggestion includes references, pros, cons, and estimated impact.
+Each suggestion includes references ~~, pros, cons, and estimated impact~~.
 
 ## License
 
